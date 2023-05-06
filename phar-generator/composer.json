@@ -1,0 +1,11 @@
+{
+    "require": {
+        "laradumps/laradumps-core": "dev-main"
+    },
+    "require-dev": {
+        "humbug/box": "^3.15"
+    },
+    "scripts": {
+        "build": "vendor/bin/box compile --no-parallel"
+    }
+}

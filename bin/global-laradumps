@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+use LaraDumps\GlobalLaraDumps\Commands\BuildCommand;
+use LaraDumps\GlobalLaraDumps\Commands\InstallCommand;
+use LaraDumps\GlobalLaraDumps\Commands\UninstallCommand;
+use LaraDumps\GlobalLaraDumps\Commands\UpgradeCommand;
+use Symfony\Component\Console\Application;
+
+if (file_exists(__DIR__.'/../../../autoload.php')) {
+    require __DIR__.'/../../../autoload.php';
+} else {
+    require __DIR__.'/../vendor/autoload.php';
+}
+
+$app = new Application('Global LaraDumps Installer', '1.0.0');
+
+$app->add(new BuildCommand());
+$app->add(new InstallCommand());
+$app->add(new UninstallCommand());
+$app->add(new UpgradeCommand());
+
+$app->run();
