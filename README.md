@@ -11,3 +11,9 @@ bin/global-laradumps install
 ```shell
 bin/global-laradumps uninstall
 ```
+
+### Upgrade
+
+```shell
+bin/global-laradumps upgrade
+```
