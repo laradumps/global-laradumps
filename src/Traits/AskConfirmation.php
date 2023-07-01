@@ -11,7 +11,7 @@ trait AskConfirmation
 {
     protected function askConfirmation(InputInterface $input, OutputInterface $output, string $message): bool
     {
-        if ($input->getOption('interactive') === 'false') {
+        if ($input->hasOption('interactive') && $input->getOption('interactive') === 'false') {
             return true;
         }
 

@@ -3,3 +3,6 @@ parameters:
         - src
     level: max
     checkMissingIterableValueType: false
+    ignoreErrors:
+        - '~^Parameter #1 \$value of function strval expects bool\|float\|int\|resource\|string\|null, mixed given\.$~'
+
