@@ -1,6 +1,6 @@
 {
     "require": {
-        "laradumps/laradumps-core": "^0.3.0"
+        "laradumps/laradumps-core": "^0.4.0"
     },
     "require-dev": {
         "humbug/box": "^3.15"
