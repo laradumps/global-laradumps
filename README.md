@@ -1,19 +1,27 @@
 # Global LaraDumps
 
+Documentation: https://laradumps.dev/
+
+### Download 
+
+```shell
+composer global require laradumps/global-laradumps
+```
+
 ### Install 
 
 ```shell
-bin/global-laradumps install
+global-laradumps install
 ```
 
 ### Uninstall
 
 ```shell
-bin/global-laradumps uninstall
+global-laradumps uninstall
 ```
 
 ### Upgrade
 
 ```shell
-bin/global-laradumps upgrade
+global-laradumps upgrade
 ```
