@@ -29,7 +29,15 @@ trait PHPIni
     {
         $iniContents = strval(file_get_contents($iniFilePath));
 
-        $iniContents = preg_replace('/^auto_prepend_file\s*=.*$/m', "auto_prepend_file = $autoPrependFile", $iniContents);
+        if (str_contains($iniContents, 'auto_prepend_file')) {
+            $iniContents = preg_replace(
+                '/^auto_prepend_file\s*=.*$/m',
+                "auto_prepend_file = $autoPrependFile",
+                $iniContents
+            );
+        } else {
+            $iniContents = sprintf("%s\nauto_prepend_file = %s\n", rtrim($iniContents), $autoPrependFile);
+        }
 
         return file_put_contents($iniFilePath, $iniContents) !== false;
     }
@@ -56,6 +64,6 @@ trait PHPIni
             $paths = array_merge($paths, explode(',', $scannedFiles));
         }
 
-        return array_unique(array_filter($paths));
+        return array_unique(array_filter(array_map(fn ($path) => trim($path), $paths)));
     }
 }
