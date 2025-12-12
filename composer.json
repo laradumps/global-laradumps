@@ -11,12 +11,12 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "symfony/console": "^6.0|^7.0",
-        "symfony/process": "^6.0|^7.0"
+        "php": "^8.2",
+        "symfony/console": "^7.0|^8.0",
+        "symfony/process": "^7.0|^8.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
+        "laravel/pint": "^1.26",
         "phpstan/phpstan": "^1.10"
     },
     "bin": [

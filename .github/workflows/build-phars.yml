@@ -12,7 +12,7 @@ jobs:
       max-parallel: 1
       matrix:
         os: [ubuntu-latest]
-        php: [8.5, 8.4, 8.3, 8.2, 8.1]
+        php: [8.5, 8.4, 8.3, 8.2]
         stability: [prefer-stable]
 
     name: "PHP: ${{ matrix.php }} / ${{ matrix.os }}"
@@ -38,7 +38,7 @@ jobs:
         run: composer build
 
       - name: Pull latest
-        run: git pull origin 1.x
+        run: git pull origin 2.x
 
       - name: Push Built Phars
         uses: stefanzweifel/git-auto-commit-action@v4
