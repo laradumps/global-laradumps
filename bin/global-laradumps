@@ -16,10 +16,10 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 $app = new Application('Global LaraDumps Installer', '2.0.0');
 
 $commands = [
-        new BuildCommand(),
-        new InstallCommand(),
-        new UninstallCommand(),
-        new UpgradeCommand(),
+    new BuildCommand(),
+    new InstallCommand(),
+    new UninstallCommand(),
+    new UpgradeCommand(),
 ];
 
 foreach ($commands as $command) {
