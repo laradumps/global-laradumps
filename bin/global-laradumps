@@ -15,9 +15,21 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 
 $app = new Application('Global LaraDumps Installer', '2.0.0');
 
-$app->add(new BuildCommand());
-$app->add(new InstallCommand());
-$app->add(new UninstallCommand());
-$app->add(new UpgradeCommand());
+$commands = [
+        new BuildCommand(),
+        new InstallCommand(),
+        new UninstallCommand(),
+        new UpgradeCommand(),
+];
+
+foreach ($commands as $command) {
+    if (method_exists($app, 'addCommand')) {
+        $app->addCommand($command);
+
+        continue;
+    }
+
+    $app->add($command);
+}
 
 $app->run();
